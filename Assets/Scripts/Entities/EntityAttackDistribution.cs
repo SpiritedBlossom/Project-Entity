@@ -1,7 +1,11 @@
 using NUnit.Framework;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using System;
 using UnityEngine;
 
-public class EntityAttackDistribution : MonoBehaviour {
+[Serializable]
+public class EntityAttackDistribution {
 
     public EntityAttack attack { get; set; }
     public int weight { get; set; }

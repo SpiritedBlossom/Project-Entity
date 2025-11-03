@@ -6,4 +6,9 @@ public class SampleEntity : BaseEntity
     {
         throw new System.NotImplementedException();
     }
+
+    public void DebugAddAttack()
+    {
+
+    }
 }
