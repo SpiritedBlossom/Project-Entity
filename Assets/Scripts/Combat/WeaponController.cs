@@ -2,10 +2,12 @@ using JetBrains.Annotations;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class WeaponController : MonoBehaviour
 {
-    private List<WeaponSO> weaponSO;
+    public List<WeaponSO> weaponSO;
     private List<WeaponData> weaponData;
     private WeaponData activeWeapon;
     private int weaponIndex;
@@ -22,10 +24,10 @@ public class WeaponController : MonoBehaviour
 
     public void SwitchWeapon(int index)
     {
-        if(index <= weaponSO.Count)
+        if(index <= weaponData.Count)
         {
             weaponIndex = index;
-            activeWeapon = weaponSO[index];
+            activeWeapon = weaponData[index];
         }
     }
 
@@ -55,8 +57,8 @@ public class WeaponController : MonoBehaviour
         //add it to weaponData
         WeaponData newWeaponData = new WeaponData();
         newWeaponData.InitializeWeaponData(weapon);
+        activeWeapon = newWeaponData; 
         weaponData.Add(newWeaponData);
-        activeWeapon = weaponData;
     }
 
     public void ShootWeapon()
@@ -64,7 +66,7 @@ public class WeaponController : MonoBehaviour
         //raycast
         Ray ray = new Ray(transform.position, (Camera.main.transform.position));
         RaycastHit hitData; 
-        if (Physics.Raycast(ray, out hitData, weaponData.range))
+        if (Physics.Raycast(ray, out hitData, activeWeapon.range))
         {
             print("hit");
         }
