@@ -1,6 +1,6 @@
 using UnityEngine;
+[CreateAssetMenu(fileName = "EntityAttackSO", menuName = "Entity/EntityAttackSO")]
 
-// Deliberately kept empty at the moment per Sujan - (10/21/25 | Snype)
-public abstract class EntityAttack : MonoBehaviour {
+public class EntityAttack : ScriptableObject {
 
 }

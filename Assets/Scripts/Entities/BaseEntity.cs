@@ -10,8 +10,8 @@ public abstract class BaseEntity : MonoBehaviour {
     private float moveSpeed;
     private float hitPoints;
 
-    List<EntityAttack> entityAttacks;
-    List<EntityAttackDistribution> attackDistribution;
+    public List<EntityAttack> entityAttacks;
+    public List<EntityAttackDistribution> attackDistribution;
 
     public abstract void Patrol();
 
