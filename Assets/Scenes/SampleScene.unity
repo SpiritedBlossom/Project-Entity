@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 744e881a47e40df4ab7f0c75091b3f5d, type: 2}
   - {fileID: 11400000, guid: 707d40b480a68224aa270b7e33489a2c, type: 2}
   weaponIndex: 0
+  weaponTest: {fileID: 11400000, guid: b825432f38ac7024f98cfe9e5c9ee1dd, type: 2}
 --- !u!4 &294928754
 Transform:
   m_ObjectHideFlags: 0
