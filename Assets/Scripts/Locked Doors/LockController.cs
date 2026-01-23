@@ -9,7 +9,7 @@ public class LockController : MonoBehaviour
     //door to be compared, handled by interaction manager
     public DoorObject targetDoor;
     //temporary key variable for testing
-    //public KeyObject targetKey;
+    public KeyObject targetKey;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,11 +19,11 @@ public class LockController : MonoBehaviour
     void Update()
     {
         //Testing if door event works using left click
-        //if(Mouse.current.leftButton.wasPressedThisFrame)
+        /*if(Mouse.current.leftButton.wasPressedThisFrame)
         {
-            //Debug.Log("testing key!");
-            //TryUnlock(targetKey, targetDoor);
-        }
+            Debug.Log("testing key!");
+            TryUnlock(targetKey, targetDoor);
+        }*/
     }
 
     public void TryUnlock(KeyObject key_, DoorObject door_)
@@ -31,12 +31,13 @@ public class LockController : MonoBehaviour
         //if key identifier matches with door identifier, invoke unlocked event
         if (key_.keyData.identifier == door_.doorData.identifier)
         {
-            door_.onDoorUnlocked.Invoke();
+            //checks for listeners, if so, invoke
+            door_.onDoorUnlocked?.Invoke();
         }
         else
         {
             //if key identifier does NOT match with door identifier, return
-            //Debug.Log("key no work");
+            Debug.Log("key no work");
             return;
         }
     }

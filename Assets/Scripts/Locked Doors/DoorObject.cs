@@ -10,8 +10,6 @@ public class DoorObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //instantiate event on Start
-        if (onDoorUnlocked != null) onDoorUnlocked = new UnityEvent();
         
     }
 
